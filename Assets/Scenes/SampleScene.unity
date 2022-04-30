@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 205982202}
   - component: {fileID: 205982201}
   m_Layer: 5
-  m_Name: X_Neg
+  m_Name: X-
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,7 +308,7 @@ RectTransform:
   m_Children:
   - {fileID: 1833359138}
   m_Father: {fileID: 1538231014}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -358,7 +358,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 205982202}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1538231015}
+        m_TargetAssemblyTypeName: CursorMovement, Assembly-CSharp
+        m_MethodName: SetCursorButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &205982202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,7 +592,7 @@ GameObject:
   - component: {fileID: 716701035}
   - component: {fileID: 716701034}
   m_Layer: 5
-  m_Name: X_Pos
+  m_Name: X+
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -600,7 +612,7 @@ RectTransform:
   m_Children:
   - {fileID: 690508915}
   m_Father: {fileID: 1538231014}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -650,7 +662,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 716701035}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1538231015}
+        m_TargetAssemblyTypeName: CursorMovement, Assembly-CSharp
+        m_MethodName: SetCursorButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &716701035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,14 +932,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0.09163971, y: 0.90821177, z: -0.2515123, w: -0.32170668}
+  m_LocalPosition: {x: 7.45, y: 8.07, z: 12.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 31.052, y: 218.924, z: -0.31}
 --- !u!1 &1011492065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +1029,7 @@ GameObject:
   - component: {fileID: 1271613175}
   - component: {fileID: 1271613174}
   m_Layer: 5
-  m_Name: Z_Pos
+  m_Name: Z+
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1025,7 +1049,7 @@ RectTransform:
   m_Children:
   - {fileID: 116479621}
   m_Father: {fileID: 1538231014}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1075,7 +1099,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1271613175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1538231015}
+        m_TargetAssemblyTypeName: CursorMovement, Assembly-CSharp
+        m_MethodName: SetCursorButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1271613175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,7 +1163,7 @@ GameObject:
   - component: {fileID: 1523586453}
   - component: {fileID: 1523586452}
   m_Layer: 5
-  m_Name: Z_Neg
+  m_Name: Z-
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1147,7 +1183,7 @@ RectTransform:
   m_Children:
   - {fileID: 119783991}
   m_Father: {fileID: 1538231014}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1197,7 +1233,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1523586453}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1538231015}
+        m_TargetAssemblyTypeName: CursorMovement, Assembly-CSharp
+        m_MethodName: SetCursorButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1523586453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,12 +1377,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1271613173}
+  - {fileID: 1523586451}
   - {fileID: 1703763565}
   - {fileID: 1880166698}
   - {fileID: 716701033}
   - {fileID: 205982200}
-  - {fileID: 1271613173}
-  - {fileID: 1523586451}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1368,7 +1416,7 @@ GameObject:
   - component: {fileID: 1703763567}
   - component: {fileID: 1703763566}
   m_Layer: 5
-  m_Name: Y_Pos
+  m_Name: Y+
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1388,7 +1436,7 @@ RectTransform:
   m_Children:
   - {fileID: 1011492066}
   m_Father: {fileID: 1538231014}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1438,7 +1486,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1703763567}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1538231015}
+        m_TargetAssemblyTypeName: CursorMovement, Assembly-CSharp
+        m_MethodName: SetCursorButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1703763567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1566,7 +1626,7 @@ GameObject:
   - component: {fileID: 1880166700}
   - component: {fileID: 1880166699}
   m_Layer: 5
-  m_Name: Y_Neg
+  m_Name: Y-
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1586,7 +1646,7 @@ RectTransform:
   m_Children:
   - {fileID: 805503252}
   m_Father: {fileID: 1538231014}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: -90}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1636,7 +1696,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1880166700}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1538231015}
+        m_TargetAssemblyTypeName: CursorMovement, Assembly-CSharp
+        m_MethodName: SetCursorButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1880166700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1704,6 +1776,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb73b376e6414be41bf6df5b492867f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridX: 5
+  gridY: 10
+  gridZ: 5
   gridElement: {fileID: 7934488623763938578, guid: 422c1d43847785f44b58df8bd1373ade, type: 3}
   gridElements: []
 --- !u!4 &1978912362
