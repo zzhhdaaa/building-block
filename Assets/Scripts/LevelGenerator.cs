@@ -13,8 +13,10 @@ public class LevelGenerator : MonoBehaviour
     public GridElement gridElement;
     public CornerElement cornerElement;
 
-    public GridElement[] gridElements;
-    public CornerElement[] cornerElements;
+    //public GridElement[] gridElements;
+    //public CornerElement[] cornerElements;
+    public List<GridElement> gridElements;
+    public List<CornerElement> cornerElements;
 
     float floorHeight = 0.25f, basementHeight = 1f;
 
@@ -32,24 +34,12 @@ public class LevelGenerator : MonoBehaviour
 
         float elementHeight;
 
-        cornerElements = new CornerElement[(gridX + 1) * (gridY + 1) * (gridZ + 1)];
-        gridElements = new GridElement[gridX * gridY * gridZ];
+        gridElements = new List<GridElement>();
+        cornerElements = new List<CornerElement>();
+        //cornerElements = new CornerElement[(gridX + 1) * (gridY + 1) * (gridZ + 1)];
+        //gridElements = new GridElement[gridX * gridY * gridZ];
 
         //create corner elements
-        /*
-        for (int x = 0; x < gridX + 1; x++)
-        {
-            for (int y = 0; y < gridY + 1; y++)
-            {
-                for (int z = 0; z < gridZ + 1; z++)
-                {
-                    CornerElement cornerElementInstance = Instantiate(cornerElement, Vector3.zero, Quaternion.identity, this.transform);
-                    cornerElementInstance.Initialize(x, y, z);
-                    cornerElements[x * (gridY + 1) * (gridZ + 1) + y * (gridZ + 1) + z] = cornerElementInstance;
-                }
-            }
-        }
-        */
         for (int y = 0; y < gridY + 1; y++)
         {
             for (int z = 0; z < gridZ + 1; z++)
@@ -58,43 +48,13 @@ public class LevelGenerator : MonoBehaviour
                 {
                     CornerElement cornerElementInstance = Instantiate(cornerElement, Vector3.zero, Quaternion.identity, this.transform);
                     cornerElementInstance.Initialize(x, y, z);
-                    cornerElements[y * (gridZ + 1) * (gridX + 1) + z * (gridX + 1) + x] = cornerElementInstance;
+                    //cornerElements[y * (gridZ + 1) * (gridX + 1) + z * (gridX + 1) + x] = cornerElementInstance;
+                    cornerElements.Add(cornerElementInstance);
                 }
             }
         }
 
         //create grid elements
-        /*
-        for (int x = 0; x < gridX; x++)
-        {
-            for (int y = 0; y < gridY; y++)
-            {
-                float yPos = y;
-
-                if (y == 0)
-                {
-                    elementHeight = floorHeight;
-                    yPos = -0.375f;
-                }
-                else if (y == 1)
-                {
-                    elementHeight = basementHeight;
-                    yPos = 0.625f;
-                }
-                else
-                {
-                    elementHeight = 1f;
-                }
-
-                for (int z = 0; z < gridZ; z++)
-                {
-                    GridElement gridElementInstance = Instantiate(gridElement, new Vector3(x, yPos, z), Quaternion.identity, this.transform);
-                    gridElementInstance.Initialize(x, y, z, elementHeight);
-                    gridElements[x * gridY * gridZ + y * gridZ + z] = gridElementInstance;
-                }
-            }
-        }
-        */
         for (int y = 0; y < gridY; y++)
         {
             float yPos = y;
@@ -113,13 +73,15 @@ public class LevelGenerator : MonoBehaviour
             {
                 elementHeight = 1f;
             }
+
             for (int z = 0; z < gridZ; z++)
             {
                 for (int x = 0; x < gridX; x++)
                 {
                     GridElement gridElementInstance = Instantiate(gridElement, new Vector3(x, yPos, z), Quaternion.identity, this.transform);
                     gridElementInstance.Initialize(x, y, z, elementHeight);
-                    gridElements[y * gridZ * gridX + z * gridX + x] = gridElementInstance;
+                    //gridElements[y * gridZ * gridX + z * gridX + x] = gridElementInstance;
+                    gridElements.Add(gridElementInstance);
                 }
             }
         }

@@ -30,32 +30,34 @@ public class CornerElement : MonoBehaviour
     public void SetNearGridElements()
     {
         int gridX = LevelGenerator.instance.gridX;
-        int gridY = LevelGenerator.instance.gridY;
+        //int gridY = LevelGenerator.instance.gridY;
         int gridZ = LevelGenerator.instance.gridZ;
 
-        if (coord.x < gridX && coord.y < gridY && coord.z < gridZ)
+
+        //TODO: Game of life add error
+        if (coord.x < gridX && coord.y < LevelGenerator.instance.gridY && coord.z < gridZ)
         {
             //UpperNorthEast
             //Debug.Log(this.name);
-            nearGridElements[0] = LevelGenerator.instance.gridElements[coord.x * gridY * gridZ + coord.y * gridZ + coord.z];
+            nearGridElements[0] = LevelGenerator.instance.gridElements[coord.y * gridZ * gridX + coord.z * gridX + coord.x];
         }
-        if (coord.x > 0 && coord.y < gridY && coord.z < gridZ)
+        if (coord.x > 0 && coord.y < LevelGenerator.instance.gridY && coord.z < gridZ)
         {
             //UpperNorthWest
             //Debug.Log(this.name);
-            nearGridElements[1] = LevelGenerator.instance.gridElements[(coord.x - 1) * gridY * gridZ + coord.y * gridZ + coord.z];
+            nearGridElements[1] = LevelGenerator.instance.gridElements[coord.y * gridZ * gridX + coord.z * gridX + (coord.x - 1)];
         }
-        if (coord.x > 0 && coord.y < gridY && coord.z > 0)
+        if (coord.x > 0 && coord.y < LevelGenerator.instance.gridY && coord.z > 0)
         {
             //UpperSouthWest
             //Debug.Log(this.name);
-            nearGridElements[2] = LevelGenerator.instance.gridElements[(coord.x - 1) * gridY * gridZ + coord.y * gridZ + (coord.z - 1)];
+            nearGridElements[2] = LevelGenerator.instance.gridElements[coord.y * gridZ * gridX + (coord.z - 1) * gridX + (coord.x - 1)];
         }
-        if (coord.x < gridX && coord.y < gridY && coord.z > 0)
+        if (coord.x < gridX && coord.y < LevelGenerator.instance.gridY && coord.z > 0)
         {
             //UpperSouthEast
             //Debug.Log(this.name);
-            nearGridElements[3] = LevelGenerator.instance.gridElements[coord.x * gridY * gridZ + coord.y * gridZ + (coord.z - 1)];
+            nearGridElements[3] = LevelGenerator.instance.gridElements[coord.y * gridZ * gridX + (coord.z - 1) * gridX + coord.x];
         }
 
 
@@ -63,25 +65,25 @@ public class CornerElement : MonoBehaviour
         {
             //LowerNorthEast
             //Debug.Log(this.name);
-            nearGridElements[4] = LevelGenerator.instance.gridElements[coord.x * gridY * gridZ + (coord.y - 1) * gridZ + coord.z];
+            nearGridElements[4] = LevelGenerator.instance.gridElements[(coord.y - 1) * gridZ * gridX + coord.z * gridX + coord.x];
         }
         if (coord.x > 0 && coord.y > 0 && coord.z < gridZ)
         {
             //LowerNorthWest
             //Debug.Log(this.name);
-            nearGridElements[5] = LevelGenerator.instance.gridElements[(coord.x - 1) * gridY * gridZ + (coord.y - 1) * gridZ + coord.z];
+            nearGridElements[5] = LevelGenerator.instance.gridElements[(coord.y - 1) * gridZ * gridX + coord.z * gridX + (coord.x - 1)];
         }
         if (coord.x > 0 && coord.y > 0 && coord.z > 0)
         {
             //LowerSouthWest
             //Debug.Log(this.name);
-            nearGridElements[6] = LevelGenerator.instance.gridElements[(coord.x - 1) * gridY * gridZ + (coord.y - 1) * gridZ + (coord.z - 1)];
+            nearGridElements[6] = LevelGenerator.instance.gridElements[(coord.y - 1) * gridZ * gridX + (coord.z - 1) * gridX + (coord.x - 1)];
         }
         if (coord.x < gridX && coord.y > 0 && coord.z > 0)
         {
             //LowerSouthEast
             //Debug.Log(this.name);
-            nearGridElements[7] = LevelGenerator.instance.gridElements[coord.x * gridY * gridZ + (coord.y - 1) * gridZ + (coord.z - 1)];
+            nearGridElements[7] = LevelGenerator.instance.gridElements[(coord.y - 1) * gridZ * gridX + (coord.z - 1) * gridX + coord.x];
         }
     }
 }
