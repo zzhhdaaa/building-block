@@ -47,6 +47,20 @@ public class GridElement : MonoBehaviour
         corners[6] = LevelGenerator.instance.cornerElements[(coord.x + 1) * (gridY + 1) * (gridZ + 1) + (coord.y + 1) * (gridZ + 1) + coord.z];
         corners[7] = LevelGenerator.instance.cornerElements[(coord.x + 1) * (gridY + 1) * (gridZ + 1) + (coord.y + 1) * (gridZ + 1) + (coord.z + 1)];
 
+
+        //positioning corner elements
+        corners[0].SetPosition(col.bounds.min.x, col.bounds.center.y - elementHeight / 2f, col.bounds.min.z);
+        corners[1].SetPosition(col.bounds.min.x, col.bounds.center.y - elementHeight / 2f, col.bounds.max.z);
+        corners[2].SetPosition(col.bounds.max.x, col.bounds.center.y - elementHeight / 2f, col.bounds.min.z);
+        corners[3].SetPosition(col.bounds.max.x, col.bounds.center.y - elementHeight / 2f, col.bounds.max.z);
+        corners[4].SetPosition(col.bounds.min.x, col.bounds.center.y + elementHeight / 2f, col.bounds.min.z);
+        corners[5].SetPosition(col.bounds.min.x, col.bounds.center.y + elementHeight / 2f, col.bounds.max.z);
+        corners[6].SetPosition(col.bounds.max.x, col.bounds.center.y + elementHeight / 2f, col.bounds.min.z);
+        corners[7].SetPosition(col.bounds.max.x, col.bounds.center.y + elementHeight / 2f, col.bounds.max.z);
+    }
+
+    public void PositioningCornerElements()
+    {
         //positioning corner elements
         corners[0].SetPosition(col.bounds.min.x, col.bounds.min.y, col.bounds.min.z);
         corners[1].SetPosition(col.bounds.min.x, col.bounds.min.y, col.bounds.max.z);
@@ -56,7 +70,6 @@ public class GridElement : MonoBehaviour
         corners[5].SetPosition(col.bounds.min.x, col.bounds.max.y, col.bounds.max.z);
         corners[6].SetPosition(col.bounds.max.x, col.bounds.max.y, col.bounds.min.z);
         corners[7].SetPosition(col.bounds.max.x, col.bounds.max.y, col.bounds.max.z);
-
     }
 
     public Coord GetCoord()
