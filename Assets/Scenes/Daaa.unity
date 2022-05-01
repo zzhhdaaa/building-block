@@ -1082,7 +1082,7 @@ MonoBehaviour:
   testInt: 0
   minComfort: 3
   maxComfort: 6
-  randomShift: 0.354
+  randomShift: 0.366
 --- !u!4 &1123454519
 Transform:
   m_ObjectHideFlags: 0

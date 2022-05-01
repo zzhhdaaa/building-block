@@ -63,6 +63,7 @@ public class GameOfLife : MonoBehaviour
                     else
                     {
                         LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].SetDisable();
+                        LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].CreateLife();
                     }
                 }
             }
