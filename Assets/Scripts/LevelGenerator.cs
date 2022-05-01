@@ -28,8 +28,8 @@ public class LevelGenerator : MonoBehaviour
             instance = this;
         }
 
-        gridElements = new GridElement[gridX * gridY * gridZ];
         cornerElements = new CornerElement[(gridX + 1) * (gridY + 1) * (gridZ + 1)];
+        gridElements = new GridElement[gridX * gridY * gridZ];
 
         //create corner elements
         for (int x = 0; x < gridX + 1; x++)
@@ -57,6 +57,11 @@ public class LevelGenerator : MonoBehaviour
                     gridElements[x * gridY * gridZ + y * gridZ + z] = gridElementInstance;
                 }
             }
+        }
+
+        foreach (CornerElement corner in cornerElements)
+        {
+            corner.SetNearGridElements();
         }
     }
 
