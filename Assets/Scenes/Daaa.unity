@@ -1760,9 +1760,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb73b376e6414be41bf6df5b492867f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridX: 2
-  gridY: 2
-  gridZ: 2
+  gridX: 4
+  gridY: 4
+  gridZ: 4
   gridElement: {fileID: 7934488623763938578, guid: 422c1d43847785f44b58df8bd1373ade, type: 3}
   cornerElement: {fileID: 241353546361471872, guid: 2375ddcb50f453f44928d5e68c86c1b5, type: 3}
   gridElements: []

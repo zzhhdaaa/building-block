@@ -7,11 +7,12 @@ public class CursorMovement : MonoBehaviour
     RaycastHit hit;
     Ray ray;
     GridElement lastHit;
+    RectTransform rectTransform;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rectTransform = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
@@ -22,6 +23,9 @@ public class CursorMovement : MonoBehaviour
         {
             transform.position = hit.collider.transform.position;
             lastHit = hit.collider.GetComponent<GridElement>();
+
+            this.rectTransform.sizeDelta = new Vector2(1.0f, lastHit.GetElementHeight());
+
             if (Input.GetMouseButtonDown(1))
             {
                 SetCursorButton(6);

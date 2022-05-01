@@ -6,6 +6,7 @@ public class CornerElement : MonoBehaviour
 {
     Coord coord;
     public GridElement[] nearGridElements = new GridElement[8];
+    public int bitMaskValue;
 
     public void Initialize(int setX, int setY, int setZ)
     {
@@ -16,6 +17,11 @@ public class CornerElement : MonoBehaviour
     public void SetPosition(float setX, float setY, float setZ)
     {
         this.transform.position = new Vector3(setX, setY, setZ);
+    }
+
+    public void SetCornerElement()
+    {
+        bitMaskValue = BitMask.GetBitMask(nearGridElements);
     }
 
     public void SetNearGridElements()
@@ -36,17 +42,17 @@ public class CornerElement : MonoBehaviour
             //Debug.Log(this.name);
             nearGridElements[1] = LevelGenerator.instance.gridElements[(coord.x - 1) * gridY * gridZ + coord.y * gridZ + coord.z];
         }
-        if (coord.x < gridX && coord.y < gridY && coord.z > 0)
-        {
-            //UpperSouthEast
-            //Debug.Log(this.name);
-            nearGridElements[2] = LevelGenerator.instance.gridElements[coord.x * gridY * gridZ + coord.y * gridZ + (coord.z - 1)];
-        }
         if (coord.x > 0 && coord.y < gridY && coord.z > 0)
         {
             //UpperSouthWest
             //Debug.Log(this.name);
-            nearGridElements[3] = LevelGenerator.instance.gridElements[(coord.x - 1) * gridY * gridZ + coord.y * gridZ + (coord.z - 1)];
+            nearGridElements[2] = LevelGenerator.instance.gridElements[(coord.x - 1) * gridY * gridZ + coord.y * gridZ + (coord.z - 1)];
+        }
+        if (coord.x < gridX && coord.y < gridY && coord.z > 0)
+        {
+            //UpperSouthEast
+            //Debug.Log(this.name);
+            nearGridElements[3] = LevelGenerator.instance.gridElements[coord.x * gridY * gridZ + coord.y * gridZ + (coord.z - 1)];
         }
 
 
@@ -62,17 +68,17 @@ public class CornerElement : MonoBehaviour
             //Debug.Log(this.name);
             nearGridElements[5] = LevelGenerator.instance.gridElements[(coord.x - 1) * gridY * gridZ + (coord.y - 1) * gridZ + coord.z];
         }
-        if (coord.x < gridX && coord.y > 0 && coord.z > 0)
-        {
-            //LowerSouthEast
-            //Debug.Log(this.name);
-            nearGridElements[6] = LevelGenerator.instance.gridElements[coord.x * gridY * gridZ + (coord.y - 1) * gridZ + (coord.z - 1)];
-        }
         if (coord.x > 0 && coord.y > 0 && coord.z > 0)
         {
             //LowerSouthWest
             //Debug.Log(this.name);
-            nearGridElements[7] = LevelGenerator.instance.gridElements[(coord.x - 1) * gridY * gridZ + (coord.y - 1) * gridZ + (coord.z - 1)];
+            nearGridElements[6] = LevelGenerator.instance.gridElements[(coord.x - 1) * gridY * gridZ + (coord.y - 1) * gridZ + (coord.z - 1)];
+        }
+        if (coord.x < gridX && coord.y > 0 && coord.z > 0)
+        {
+            //LowerSouthEast
+            //Debug.Log(this.name);
+            nearGridElements[7] = LevelGenerator.instance.gridElements[coord.x * gridY * gridZ + (coord.y - 1) * gridZ + (coord.z - 1)];
         }
     }
 }

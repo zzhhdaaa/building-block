@@ -16,6 +16,8 @@ public class LevelGenerator : MonoBehaviour
     public GridElement[] gridElements;
     public CornerElement[] cornerElements;
 
+    float floorHeight = 0.5f, basementHeight = 1.5f;
+
     void Start()
     {
         //singleton
@@ -27,6 +29,8 @@ public class LevelGenerator : MonoBehaviour
         {
             instance = this;
         }
+
+        float elementHeight;
 
         cornerElements = new CornerElement[(gridX + 1) * (gridY + 1) * (gridZ + 1)];
         gridElements = new GridElement[gridX * gridY * gridZ];
@@ -50,10 +54,27 @@ public class LevelGenerator : MonoBehaviour
         {
             for (int y = 0; y < gridY; y++)
             {
+                float yPos = y;
+
+                if (y == 0)
+                {
+                    elementHeight = floorHeight;
+                    yPos = -0.25f;
+                }
+                else if (y == 1)
+                {
+                    elementHeight = basementHeight;
+                    yPos = 0.75f;
+                }
+                else
+                {
+                    elementHeight = 1f;
+                }
+
                 for (int z = 0; z < gridZ; z++)
                 {
-                    GridElement gridElementInstance = Instantiate(gridElement, new Vector3(x, y, z), Quaternion.identity, this.transform);
-                    gridElementInstance.Initialize(x, y, z);
+                    GridElement gridElementInstance = Instantiate(gridElement, new Vector3(x, yPos, z), Quaternion.identity, this.transform);
+                    gridElementInstance.Initialize(x, y, z, elementHeight);
                     gridElements[x * gridY * gridZ + y * gridZ + z] = gridElementInstance;
                 }
             }
@@ -62,6 +83,11 @@ public class LevelGenerator : MonoBehaviour
         foreach (CornerElement corner in cornerElements)
         {
             corner.SetNearGridElements();
+        }
+
+        foreach (GridElement gridElement in gridElements)
+        {
+            gridElement.SetEnable();
         }
     }
 

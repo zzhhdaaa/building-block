@@ -19,10 +19,11 @@ public class GridElement : MonoBehaviour
     Coord coord;
     Collider col;
     Renderer rend;
-
+    bool isEnabled;
+    float elementHeight;
     public CornerElement[] corners = new CornerElement[8];
 
-    public void Initialize(int setX, int setY, int setZ)
+    public void Initialize(int setX, int setY, int setZ, float setElementHeight)
     {
         int gridX = LevelGenerator.instance.gridX;
         int gridY = LevelGenerator.instance.gridY;
@@ -30,6 +31,8 @@ public class GridElement : MonoBehaviour
 
         coord = new Coord(setX, setY, setZ);
         this.name = "GE_" + this.coord.x + "_" + this.coord.y + "_" + this.coord.z;
+        this.elementHeight = setElementHeight;
+        this.transform.localScale = new Vector3(1.0f, elementHeight, 1.0f);
         this.col = this.GetComponent<Collider>();
         this.rend = this.GetComponent<Renderer>();
 
@@ -63,13 +66,33 @@ public class GridElement : MonoBehaviour
 
     public void SetEnable()
     {
+        this.isEnabled = true;
         this.col.enabled = true;
         this.rend.enabled = true;
+        foreach (CornerElement ce in this.corners)
+        {
+            ce.SetCornerElement();
+        }
     }
 
     public void SetDisable()
     {
+        this.isEnabled = false;
         this.col.enabled = false;
         this.rend.enabled = false;
+        foreach (CornerElement ce in this.corners)
+        {
+            ce.SetCornerElement();
+        }
+    }
+
+    public bool GetEnabled()
+    {
+        return this.isEnabled;
+    }
+
+    public float GetElementHeight()
+    {
+        return elementHeight;
     }
 }
