@@ -16,7 +16,7 @@ public class LevelGenerator : MonoBehaviour
     public GridElement[] gridElements;
     public CornerElement[] cornerElements;
 
-    float floorHeight = 0.5f, basementHeight = 1.5f;
+    float floorHeight = 0.25f, basementHeight = 1f;
 
     void Start()
     {
@@ -36,6 +36,7 @@ public class LevelGenerator : MonoBehaviour
         gridElements = new GridElement[gridX * gridY * gridZ];
 
         //create corner elements
+        /*
         for (int x = 0; x < gridX + 1; x++)
         {
             for (int y = 0; y < gridY + 1; y++)
@@ -48,8 +49,22 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
         }
+        */
+        for (int y = 0; y < gridY + 1; y++)
+        {
+            for (int z = 0; z < gridZ + 1; z++)
+            {
+                for (int x = 0; x < gridX + 1; x++)
+                {
+                    CornerElement cornerElementInstance = Instantiate(cornerElement, Vector3.zero, Quaternion.identity, this.transform);
+                    cornerElementInstance.Initialize(x, y, z);
+                    cornerElements[y * (gridZ + 1) * (gridX + 1) + z * (gridX + 1) + x] = cornerElementInstance;
+                }
+            }
+        }
 
         //create grid elements
+        /*
         for (int x = 0; x < gridX; x++)
         {
             for (int y = 0; y < gridY; y++)
@@ -59,12 +74,12 @@ public class LevelGenerator : MonoBehaviour
                 if (y == 0)
                 {
                     elementHeight = floorHeight;
-                    yPos = -0.25f;
+                    yPos = -0.375f;
                 }
                 else if (y == 1)
                 {
                     elementHeight = basementHeight;
-                    yPos = 0.75f;
+                    yPos = 0.625f;
                 }
                 else
                 {
@@ -79,6 +94,35 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
         }
+        */
+        for (int y = 0; y < gridY; y++)
+        {
+            float yPos = y;
+
+            if (y == 0)
+            {
+                elementHeight = floorHeight;
+                yPos = -0.375f;
+            }
+            else if (y == 1)
+            {
+                elementHeight = basementHeight;
+                yPos = 0.625f;
+            }
+            else
+            {
+                elementHeight = 1f;
+            }
+            for (int z = 0; z < gridZ; z++)
+            {
+                for (int x = 0; x < gridX; x++)
+                {
+                    GridElement gridElementInstance = Instantiate(gridElement, new Vector3(x, yPos, z), Quaternion.identity, this.transform);
+                    gridElementInstance.Initialize(x, y, z, elementHeight);
+                    gridElements[y * gridZ * gridX + z * gridX + x] = gridElementInstance;
+                }
+            }
+        }
 
         foreach (CornerElement corner in cornerElements)
         {
@@ -89,10 +133,5 @@ public class LevelGenerator : MonoBehaviour
         {
             gridElement.SetEnable();
         }
-    }
-
-    void Update()
-    {
-        
     }
 }
