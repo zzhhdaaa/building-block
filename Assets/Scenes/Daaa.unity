@@ -1080,6 +1080,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testInt: 0
+  minComfort: 3
+  maxComfort: 6
+  randomShift: 0.354
 --- !u!4 &1123454519
 Transform:
   m_ObjectHideFlags: 0
@@ -1848,9 +1851,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb73b376e6414be41bf6df5b492867f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridX: 4
+  gridX: 8
   gridY: 3
-  gridZ: 4
+  gridZ: 8
   gridElement: {fileID: 7934488623763938578, guid: 422c1d43847785f44b58df8bd1373ade, type: 3}
   cornerElement: {fileID: 241353546361471872, guid: 2375ddcb50f453f44928d5e68c86c1b5, type: 3}
   gridElements: []
