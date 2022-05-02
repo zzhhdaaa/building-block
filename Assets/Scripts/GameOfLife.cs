@@ -11,13 +11,11 @@ public class GameOfLife : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float randomShift;
 
-    // Start is called before the first frame update
     void Start()
     {
         //gridElements = LevelGenerator.instance.gridElements;
     }
 
-    // Update is called once per frame
     void Update()
     {
         //test how to disable a layer
@@ -36,37 +34,7 @@ public class GameOfLife : MonoBehaviour
         //give it life!
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            List<bool> lastLife = new List<bool>();
-            List<bool> nextLife = new List<bool>();
-
-            //get the lastLife status
-            for (int z = 0; z < LevelGenerator.instance.gridZ; z++)
-            {
-                for (int x = 0; x < LevelGenerator.instance.gridX; x++)
-                {
-                    lastLife.Add(LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].GetEnabled());
-                    print(lastLife[LevelGenerator.instance.gridZ * z + x]);
-                }
-            }
-
-            nextLife = CalculateLife(lastLife, LevelGenerator.instance.gridX, LevelGenerator.instance.gridZ);
-            AddBuildingHeight();
-
-            for (int z = 0; z < LevelGenerator.instance.gridZ; z++)
-            {
-                for (int x = 0; x < LevelGenerator.instance.gridX; x++)
-                {
-                    if (nextLife[LevelGenerator.instance.gridZ * z + x])
-                    {
-                        LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].SetEnable();
-                    }
-                    else
-                    {
-                        LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].SetDisable();
-                        LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].CreateLife();
-                    }
-                }
-            }
+            GiveItLife();
         }
     }
 
@@ -81,14 +49,25 @@ public class GameOfLife : MonoBehaviour
             {
                 int lifeCount = 0;
                 int n0 = (z * gridX + x) - gridX - 1;
-                int n1 = (z * gridZ + z) - gridZ;
-                int n2 = (z * gridZ + z) - gridZ + 1;
+                int n1 = (z * gridX + x) - gridX;
+                int n2 = (z * gridX + x) - gridX + 1;
                 int n3 = (z * gridX + x) - 1;
-                int n4 = (z * gridZ + z);
-                int n5 = (z * gridZ + z) + 1;
+                int n4 = (z * gridX + x);
+                int n5 = (z * gridX + x) + 1;
                 int n6 = (z * gridX + x) + gridX - 1;
-                int n7 = (z * gridZ + z) + gridZ;
-                int n8 = (z * gridZ + z) + gridZ + 1;
+                int n7 = (z * gridX + x) + gridX;
+                int n8 = (z * gridX + x) + gridX + 1;
+                /*
+                int n0 = (z * gridX + x) - gridX - 1;
+                int n1 = (z * gridX + x) - gridZ;
+                int n2 = (z * gridX + x) - gridZ + 1;
+                int n3 = (z * gridX + x) - 1;
+                int n4 = (z * gridX + x);
+                int n5 = (z * gridX + x) + 1;
+                int n6 = (z * gridX + x) + gridX - 1;
+                int n7 = (z * gridX + x) + gridZ;
+                int n8 = (z * gridX + x) + gridZ + 1;
+                */
 
                 //
                 if (n0 >= 0 && n0 < lastLife.Count)
@@ -242,6 +221,41 @@ public class GameOfLife : MonoBehaviour
         foreach (CornerElement corner in LevelGenerator.instance.cornerElements)
         {
             corner.SetNearGridElements();
+        }
+    }
+
+    public void GiveItLife()
+    {
+        List<bool> lastLife = new List<bool>();
+        List<bool> nextLife = new List<bool>();
+
+        //get the lastLife status
+        for (int z = 0; z < LevelGenerator.instance.gridZ; z++)
+        {
+            for (int x = 0; x < LevelGenerator.instance.gridX; x++)
+            {
+                lastLife.Add(LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].GetEnabled());
+                print(lastLife[LevelGenerator.instance.gridZ * z + x]);
+            }
+        }
+
+        nextLife = CalculateLife(lastLife, LevelGenerator.instance.gridX, LevelGenerator.instance.gridZ);
+        AddBuildingHeight();
+
+        for (int z = 0; z < LevelGenerator.instance.gridZ; z++)
+        {
+            for (int x = 0; x < LevelGenerator.instance.gridX; x++)
+            {
+                if (nextLife[LevelGenerator.instance.gridZ * z + x])
+                {
+                    LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].SetEnable();
+                }
+                else
+                {
+                    LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].SetDisable();
+                    LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].CreateLife();
+                }
+            }
         }
     }
 }

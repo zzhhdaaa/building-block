@@ -1,0 +1,19 @@
+{
+    "name": "MoreMountains.MMFeedbacks.Demos",
+    "references": [
+        "GUID:dad624460036b51448e1b1849358a96a",
+        "GUID:4a1cb1490dc4df8409b2580d6b44e75e",
+        "GUID:c78f4186bae880a41b2f1b419e01d2f7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "MOREMOUNTAINS_FEEDBACKS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

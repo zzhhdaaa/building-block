@@ -83,7 +83,7 @@ public class CursorMovement : MonoBehaviour
                 //X-
                 if (coord.x > 0)
                 {
-                    LevelGenerator.instance.gridElements[coord.y * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + coord.z * LevelGenerator.instance.gridX + (coord.x + 1)].SetEnable();
+                    LevelGenerator.instance.gridElements[coord.y * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + coord.z * LevelGenerator.instance.gridX + (coord.x - 1)].SetEnable();
                 }
                 break;
             case 6:
