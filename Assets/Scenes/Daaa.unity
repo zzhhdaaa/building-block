@@ -1477,6 +1477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rotateSpeed: 100
+  zoomSpeed: 10
 --- !u!1 &1011492065
 GameObject:
   m_ObjectHideFlags: 0

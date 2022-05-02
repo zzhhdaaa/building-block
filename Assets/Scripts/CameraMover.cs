@@ -6,6 +6,7 @@ public class CameraMover : MonoBehaviour
 {
     public float moveSpeed;
     public float rotateSpeed;
+    public float zoomSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class CameraMover : MonoBehaviour
     {
         Move();
         Rotate();
+        Zoom();
     }
 
     private void Move()
@@ -41,5 +43,9 @@ public class CameraMover : MonoBehaviour
         {
             transform.RotateAround(new Vector3((LevelGenerator.instance.gridX-1) / 2, 0f, (LevelGenerator.instance.gridZ-1) / 2), Vector3.up, -rotateSpeed * Time.deltaTime);
         }
+    }
+    private void Zoom()
+    {
+        Camera.main.orthographicSize -= Input.mouseScrollDelta.y * zoomSpeed * Time.deltaTime;
     }
 }
