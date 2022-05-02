@@ -11,6 +11,8 @@ public class GameOfLife : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float randomShift;
 
+    private bool livingOn;
+
     void Start()
     {
         //gridElements = LevelGenerator.instance.gridElements;
@@ -35,6 +37,12 @@ public class GameOfLife : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             GiveItLife();
+        }
+
+        //living objects on or off
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            livingOn = !livingOn;
         }
     }
 
@@ -253,7 +261,10 @@ public class GameOfLife : MonoBehaviour
                 else
                 {
                     LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].SetDisable();
-                    LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].CreateLife();
+                    if (livingOn)
+                    {
+                        LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].CreateLife();
+                    }
                 }
             }
         }
