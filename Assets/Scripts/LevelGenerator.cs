@@ -10,6 +10,8 @@ public class LevelGenerator : MonoBehaviour
     public int gridY = 10;
     public int gridZ = 5;
 
+    public int gridShift = 2;
+
     public GridElement gridElement;
     public CornerElement cornerElement;
 
@@ -91,9 +93,30 @@ public class LevelGenerator : MonoBehaviour
             corner.SetNearGridElements();
         }
 
-        foreach (GridElement gridElement in gridElements)
+        foreach (GridElement grid in gridElements)
         {
-            gridElement.SetEnable();
+            grid.SetDisable();
+        }
+
+        for (int y = 0; y < 1; y++)
+        {
+            for (int z = 0; z < gridZ; z++)
+            {
+                for (int x = 0; x < gridX; x++)
+                {
+                    gridElements[y * gridZ * gridX + z * gridX + x].SetEnable();
+                }
+            }
+        }
+        for (int y = 1; y < gridY; y++)
+        {
+            for (int z = gridShift; z < gridZ - gridShift; z++)
+            {
+                for (int x = gridShift; x < gridX - gridShift; x++)
+                {
+                    gridElements[y * gridZ * gridX + z * gridX + x].SetEnable();
+                }
+            }
         }
     }
 }

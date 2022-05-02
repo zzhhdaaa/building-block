@@ -22,6 +22,7 @@ public class GridElement : MonoBehaviour
     bool isEnabled;
     float elementHeight;
     public CornerElement[] corners = new CornerElement[8];
+    public GameObject livingObjects;
 
     public void Initialize(int setX, int setY, int setZ, float setElementHeight)
     {
@@ -120,5 +121,10 @@ public class GridElement : MonoBehaviour
     public float GetElementHeight()
     {
         return elementHeight;
+    }
+
+    public void CreateLife()
+    {
+        Instantiate(livingObjects, this.transform.position, Quaternion.identity);
     }
 }
