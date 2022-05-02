@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - gridElement
+  - Tag01
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Type01
   - Water
   - UI
   - 

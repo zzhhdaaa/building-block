@@ -9,20 +9,24 @@ public class gamecontrol : MonoBehaviour
     public float maxDistance;
     private float rotationSpeed = 2f;
     private bool rightIsActivated;
+    private bool keepUp;
     private Vector3 offset;
-
+    public float maxXAngle = 90f;
+    public float minXAngle = 10f;
     void Start()
     {
         offset = transform.position - target.transform.position;
         transform.LookAt(target);
     }
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+
+        if (Input.GetMouseButtonDown(2))
         {
             rightIsActivated = true;
         }
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(2))
         {
             rightIsActivated = false;
         }

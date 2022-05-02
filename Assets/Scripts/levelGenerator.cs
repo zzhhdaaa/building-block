@@ -1,96 +1,122 @@
-﻿using System.Collections;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class levelGenerator : MonoBehaviour {
+public class LevelGenerator : MonoBehaviour
+{
+    public static LevelGenerator instance; //singleton
 
-	public static levelGenerator instance;
-	public int width = 5;
-	public int height = 10;
-	public gridElement gridElement;
-	public cornerElement cornerElement;
-	public gridElement[] gridElements;
-	public cornerElement[] cornerElements;
+    public int gridX = 5;
+    public int gridY = 10;
+    public int gridZ = 5;
 
-	private float floorHeight = 0.25f, basementHeight;
+    public int gridShift = 2;
 
-	// Use this for initialization
-	void Start () 
-	{
-		instance = this;
+    public GridElement gridElement;
+    public CornerElement cornerElement;
 
-		basementHeight = 1.5f - floorHeight / 2;
-		float elementHeight;
+    //public GridElement[] gridElements;
+    //public CornerElement[] cornerElements;
+    public List<GridElement> gridElements;
+    public List<CornerElement> cornerElements;
 
+    float floorHeight = 0.25f, basementHeight = 1f;
 
-		gridElements = new gridElement[width * width * height];
-		cornerElements = new cornerElement[(width+1)  * (width+1) * (height+1)];
+    void Start()
+    {
+        //singleton
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
 
-		for(int y = 0; y < height + 1; y++)
-		{
-			for(int x = 0; x < width + 1; x++)
-			{
-				for(int z = 0; z < width + 1; z++)
-				{
-					cornerElement cornerElementInstance = Instantiate(cornerElement, Vector3.zero, Quaternion.identity, this.transform);
-					//cornerElementInstance.name = (x + (width + 1) * (z + (width + 1) * y)).ToString();
-					
-					cornerElementInstance.Initialize(x,y,z);
-					cornerElements[x+(width+1)*(z+(width+1)*y)] = cornerElementInstance;
-				}
-			}
-		}
+        float elementHeight;
 
+        gridElements = new List<GridElement>();
+        cornerElements = new List<CornerElement>();
+        //cornerElements = new CornerElement[(gridX + 1) * (gridY + 1) * (gridZ + 1)];
+        //gridElements = new GridElement[gridX * gridY * gridZ];
 
-		for(int y = 0; y < height; y++)
-		{
-			float yPos = y;
-			if(y == 0)
-			{
-				elementHeight = floorHeight;
-			}
-			else if(y == 1)
-			{
-				elementHeight = basementHeight;
-				yPos = floorHeight / 2 + basementHeight / 2;
-			}
-			else
-			{
-				elementHeight = 1;
-			}
-			for(int x = 0; x < width; x++)
-			{
-				for(int z = 0; z < width; z++)
-				{
-					gridElement gridElementInstance = Instantiate(gridElement, new Vector3(x,yPos,z), Quaternion.identity, this.transform);
-					gridElementInstance.Initialize(x,y,z, elementHeight);
-					gridElements[x+width*(z+width*y)] = gridElementInstance;
-				}
-			}
-		}
+        //create corner elements
+        for (int y = 0; y < gridY + 1; y++)
+        {
+            for (int z = 0; z < gridZ + 1; z++)
+            {
+                for (int x = 0; x < gridX + 1; x++)
+                {
+                    CornerElement cornerElementInstance = Instantiate(cornerElement, Vector3.zero, Quaternion.identity, this.transform);
+                    cornerElementInstance.Initialize(x, y, z);
+                    //cornerElements[y * (gridZ + 1) * (gridX + 1) + z * (gridX + 1) + x] = cornerElementInstance;
+                    cornerElements.Add(cornerElementInstance);
+                }
+            }
+        }
 
-		foreach(cornerElement corner in cornerElements)
-		{
-			corner.SetNearGridElements();
-		}
+        //create grid elements
+        for (int y = 0; y < gridY; y++)
+        {
+            float yPos = y;
 
-		SetRandomize();
-	}
+            if (y == 0)
+            {
+                elementHeight = floorHeight;
+                yPos = -0.375f;
+            }
+            else if (y == 1)
+            {
+                elementHeight = basementHeight;
+                yPos = 0.625f;
+            }
+            else
+            {
+                elementHeight = 1f;
+            }
 
-	public void SetRandomize()
-	{
-		foreach(gridElement gridElement in gridElements)
-		{
-			//randomizing all grid elements above zero
-			if(Random.value < 0.5f && gridElement.GetCoord().y != 0)
-			{
-				gridElement.SetDisable();
-			}
-			else
-			{
-				gridElement.SetEnable();
-			}
-			
-		}
-	}
-	
+            for (int z = 0; z < gridZ; z++)
+            {
+                for (int x = 0; x < gridX; x++)
+                {
+                    GridElement gridElementInstance = Instantiate(gridElement, new Vector3(x, yPos, z), Quaternion.identity, this.transform);
+                    gridElementInstance.Initialize(x, y, z, elementHeight);
+                    //gridElements[y * gridZ * gridX + z * gridX + x] = gridElementInstance;
+                    gridElements.Add(gridElementInstance);
+                }
+            }
+        }
+
+        foreach (CornerElement corner in cornerElements)
+        {
+            corner.SetNearGridElements();
+        }
+
+        foreach (GridElement grid in gridElements)
+        {
+            grid.SetDisable();
+        }
+
+        for (int y = 0; y < 1; y++)
+        {
+            for (int z = 0; z < gridZ; z++)
+            {
+                for (int x = 0; x < gridX; x++)
+                {
+                    gridElements[y * gridZ * gridX + z * gridX + x].SetEnable();
+                }
+            }
+        }
+        for (int y = 1; y < gridY; y++)
+        {
+            for (int z = gridShift; z < gridZ - gridShift; z++)
+            {
+                for (int x = gridShift; x < gridX - gridShift; x++)
+                {
+                    gridElements[y * gridZ * gridX + z * gridX + x].SetEnable();
+                }
+            }
+        }
+    }
 }
