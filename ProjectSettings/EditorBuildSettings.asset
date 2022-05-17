@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Daaa.unity
+    guid: 481a89d7316a93b4a8aac300edd8c364
   m_configObjects: {}
