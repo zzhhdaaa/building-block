@@ -2,7 +2,8 @@
     "name": "MoreMountains.Feedbacks.PostProcessing",
     "references": [
         "GUID:d60799ab2a985554ea1a39cd38695018",
-        "GUID:dad624460036b51448e1b1849358a96a"
+        "GUID:dad624460036b51448e1b1849358a96a",
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
