@@ -30,12 +30,6 @@ public class CursorMovement : MonoBehaviour
             {
                 SetCursorButton(6);
             }
-
-            if (Input.GetMouseButtonDown(2))
-            {
-                FirstPersonSwitch.instance.firstPerson.transform.position = hit.point;
-                FirstPersonSwitch.instance.Switch();
-            }
         }
     }
 

@@ -133,14 +133,14 @@ public class SpiderController : MonoBehaviour
         
         float multiplier = 1f;
         if (Input.GetKey(KeyCode.LeftShift))
-            multiplier = 1.5f;
+            multiplier = 2f;
 
         float valueY = Input.GetAxis("Vertical");
         if (valueY != 0)
-            transform.position += transform.forward * (valueY * _speed * multiplier * Time.fixedDeltaTime);
+            transform.position += transform.forward * valueY * _speed * multiplier * Time.fixedDeltaTime;
         float valueX = Input.GetAxis("Horizontal");
         if (valueX != 0)
-            transform.position += Vector3.Cross(transform.up, transform.forward) * (valueX * _speed * multiplier * 0.5f * Time.fixedDeltaTime);
+            transform.position += Vector3.Cross(transform.up, transform.forward) * valueX * _speed * multiplier * Time.fixedDeltaTime;
 
         if (valueX != 0 || valueY != 0)
         {
