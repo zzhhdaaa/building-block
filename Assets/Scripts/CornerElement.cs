@@ -8,12 +8,15 @@ public class CornerElement : MonoBehaviour
     public GridElement[] nearGridElements = new GridElement[8];
     public int bitMaskValue;
     private MeshFilter mesh;
+    private MeshCollider meshCollider;
 
+    // ReSharper disable Unity.PerformanceAnalysis
     public void Initialize(int setX, int setY, int setZ)
     {
         coord = new Coord(setX, setY, setZ);
         this.name = "CE_" + coord.x + "_" + coord.y + "_" + coord.z;
         mesh = this.GetComponent<MeshFilter>();
+        meshCollider = this.GetComponent<MeshCollider>();
     }
 
     public void SetPosition(float setX, float setY, float setZ)
@@ -25,6 +28,21 @@ public class CornerElement : MonoBehaviour
     {
         bitMaskValue = BitMask.GetBitMask(nearGridElements);
         mesh.mesh = CornerMeshes.instance.GetCornerMesh(bitMaskValue, coord.y);
+        //meshCollider.enabled = false;
+        //meshCollider.sharedMesh = mesh.mesh;
+    }
+
+    public void EnableCollider(bool enabled)
+    {
+        if (enabled)
+        {
+            meshCollider.sharedMesh = mesh.mesh;
+            meshCollider.enabled = true;
+        }
+        else
+        {
+            meshCollider.enabled = false;
+        }
     }
 
     public void SetNearGridElements()

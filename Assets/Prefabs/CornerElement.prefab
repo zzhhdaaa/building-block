@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5303595815919024611}
   - component: {fileID: 6987576933236058166}
   - component: {fileID: 7709914393032930327}
+  - component: {fileID: 970490806753634499}
   - component: {fileID: 241353546361471872}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CornerElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,6 +83,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &970490806753634499
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8404425431850716582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &241353546361471872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,3 +109,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9e2cc0ab2bf1b43ac6c822beacdaf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearGridElements:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bitMaskValue: 0

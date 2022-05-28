@@ -11,6 +11,7 @@ public class FeedbacksListener : MonoBehaviour
     public MMFeedbacks giveItLiveFeedback;
     public MMFeedbacks buildFeedback;
     public MMFeedbacks breakFeedback;
+    public MMFeedbacks switchFeedback;
 
     // Start is called before the first frame update
     void Start()
@@ -21,24 +22,21 @@ public class FeedbacksListener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            feedbackOn = !feedbackOn;
+            giveItLiveFeedback?.PlayFeedbacks();
         }
-        if (feedbackOn)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                giveItLiveFeedback?.PlayFeedbacks();
-            }
-            if (Input.GetMouseButtonDown(0))
-            {
-                buildFeedback?.PlayFeedbacks();
-            }
-            if (Input.GetMouseButtonDown(1))
-            {
-                breakFeedback?.PlayFeedbacks();
-            }
+            buildFeedback?.PlayFeedbacks();
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            breakFeedback?.PlayFeedbacks();
+        }
+        if (Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.Backspace))
+        {
+            switchFeedback?.PlayFeedbacks();
         }
     }
 }

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GameOfLife : MonoBehaviour
 {
-    public int testInt;
-
     public int minComfort, maxComfort;
 
     [Range(0.0f, 1.0f)]
@@ -20,23 +18,13 @@ public class GameOfLife : MonoBehaviour
 
     void Update()
     {
-        //test how to disable a layer
-        if (Input.GetKeyDown(KeyCode.Backspace))
+        if (LevelGenerator.instance.gridY < 60)
         {
-            int gridX = LevelGenerator.instance.gridX;
-            int gridY = LevelGenerator.instance.gridY;
-            int gridZ = LevelGenerator.instance.gridZ;
-
-            for (int i = testInt*gridX*gridZ; i < LevelGenerator.instance.gridElements.Count && i < (testInt + 1) * gridX * gridZ; i++)
+            //give it life!
+            if (Input.GetKeyDown(KeyCode.Return))
             {
-                LevelGenerator.instance.gridElements[i].SetDisable();
+                GiveItLife();
             }
-        }
-
-        //give it life!
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            GiveItLife();
         }
 
         //living objects on or off
