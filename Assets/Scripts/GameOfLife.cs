@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GameOfLife : MonoBehaviour
 {
-    public int testInt;
-
     public int minComfort, maxComfort;
 
     [Range(0.0f, 1.0f)]
     public float randomShift;
+
+    private bool livingOn;
 
     void Start()
     {
@@ -18,23 +18,19 @@ public class GameOfLife : MonoBehaviour
 
     void Update()
     {
-        //test how to disable a layer
-        if (Input.GetKeyDown(KeyCode.Backspace))
+        if (LevelGenerator.instance.gridY < 60)
         {
-            int gridX = LevelGenerator.instance.gridX;
-            int gridY = LevelGenerator.instance.gridY;
-            int gridZ = LevelGenerator.instance.gridZ;
-
-            for (int i = testInt*gridX*gridZ; i < LevelGenerator.instance.gridElements.Count && i < (testInt + 1) * gridX * gridZ; i++)
+            //give it life!
+            if (Input.GetKeyDown(KeyCode.Return))
             {
-                LevelGenerator.instance.gridElements[i].SetDisable();
+                GiveItLife();
             }
         }
 
-        //give it life!
-        if (Input.GetKeyDown(KeyCode.Return))
+        //living objects on or off
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            GiveItLife();
+            livingOn = !livingOn;
         }
     }
 
@@ -253,7 +249,10 @@ public class GameOfLife : MonoBehaviour
                 else
                 {
                     LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].SetDisable();
-                    LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].CreateLife();
+                    if (livingOn)
+                    {
+                        LevelGenerator.instance.gridElements[(LevelGenerator.instance.gridY - 1) * LevelGenerator.instance.gridZ * LevelGenerator.instance.gridX + z * LevelGenerator.instance.gridX + x].CreateLife();
+                    }
                 }
             }
         }

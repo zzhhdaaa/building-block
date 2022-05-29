@@ -125,6 +125,6 @@ public class GridElement : MonoBehaviour
 
     public void CreateLife()
     {
-        Instantiate(livingObjects, this.transform.position, Quaternion.identity);
+        Instantiate(livingObjects, this.transform.position + new Vector3(Random.Range(-0.2f, 0.2f), 0f, Random.Range(-0.2f, 0.2f)), Quaternion.identity);
     }
 }
