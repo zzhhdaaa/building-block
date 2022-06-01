@@ -200,7 +200,7 @@ Material:
     - _Dissolve: 3
     - _DissolveAmount: 0.1
     - _DissolveBorderSize: 0.462
-    - _DissolveMapScale: 1
+    - _DissolveMapScale: 2.77
     - _DissolveMode: 0
     - _DissolveRampSize: 0.25
     - _DrawnClampMax: 1

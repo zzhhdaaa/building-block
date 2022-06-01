@@ -114,7 +114,10 @@ public class LevelGenerator : MonoBehaviour
             {
                 for (int x = gridShift; x < gridX - gridShift; x++)
                 {
-                    gridElements[y * gridZ * gridX + z * gridX + x].SetEnable();
+                    if (Random.Range(0f, 1f) > 0.3f)
+                    {
+                        gridElements[y * gridZ * gridX + z * gridX + x].SetEnable();
+                    }
                 }
             }
         }

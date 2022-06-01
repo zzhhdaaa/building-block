@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 970490806753634499}
   - component: {fileID: 241353546361471872}
   m_Layer: 2
-  m_Name: CornerElement
+  m_Name: cornerElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,6 +120,6 @@ MonoBehaviour:
   - {fileID: 0}
   bitMaskValue: 0
   materials:
-  - {fileID: 2100000, guid: 7395ab8381e246341bb1f4e3900d394e, type: 2}
-  - {fileID: 2100000, guid: c7e85fec4d3d7364cb46b26b0525efd8, type: 2}
-  - {fileID: 2100000, guid: e098e27e3735f9b4b91eb98782167211, type: 2}
+  - {fileID: 2100000, guid: 70eca155b2b103c49a65e4e262aa4cf0, type: 2}
+  - {fileID: 2100000, guid: fd88c34ffe60dd94ebd218dcf18935c5, type: 2}
+  - {fileID: 2100000, guid: e2596e3965120da4aad07718a20ed678, type: 2}

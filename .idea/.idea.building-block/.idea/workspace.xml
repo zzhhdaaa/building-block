@@ -6,36 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="809b3951-1cd5-48ad-8ea0-f5f0ec37026f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.building-block/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.building-block/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Feel/FeelDemos/FeelTemplatesDemo.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Feel/NiceVibrations/OlderVersions/v1.7/NiceVibrations-v-1-7.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Feel/NiceVibrations/OlderVersions/v2.0.1/NiceVibrations-v-2-0-1.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Feel/NiceVibrations/OlderVersions/v3.9/NiceVibrations-v-3-9-0.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Climber.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Climber.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Environment.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Environment.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/cornerElement.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/cornerElement.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Combined.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Combined.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraMover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnvironmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnvironmentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Environment/Water/Water/Materials/WaterProDaytime.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/Environment/Water/Water/Materials/WaterProDaytime.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/EditorURP.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/ExamplesBuiltin.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/ExamplesInc.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/ExamplesURP.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/ShadersBuiltIn.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/ShadersURP_2019_4_Or_Newer.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/ShadersURP_2021_2_Or_Newer.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameOfLife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameOfLife.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/Artistic/Materials/Threshold/CelThresholdAquarelle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/Artistic/Materials/Threshold/CelThresholdAquarelle.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/FlyingIsle/Materials/Drawn/Clouds.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/FlyingIsle/Materials/Drawn/Clouds.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/Spectate/Materials/Floor/ShaderBallMaterials/DissolveColor/InnerCircle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/Spectate/Materials/Floor/ShaderBallMaterials/DissolveColor/InnerCircle.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/Spectate/Materials/Floor/ShaderBallMaterials/DissolveRamp/InnerCircle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/Spectate/Materials/Floor/ShaderBallMaterials/DissolveRamp/InnerCircle.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/Unity Projects/building-block/Assets/_MK/MKToon/EditorURP.unitypackage.meta" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -120,7 +102,8 @@
       <workItem from="1653588046196" duration="1096000" />
       <workItem from="1653762032837" duration="5951000" />
       <workItem from="1654106233850" duration="1057000" />
-      <workItem from="1654117679168" duration="381000" />
+      <workItem from="1654117679168" duration="654000" />
+      <workItem from="1654119364423" duration="197000" />
     </task>
     <servers />
   </component>

@@ -52,7 +52,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DissolveMap:
-        m_Texture: {fileID: 2800000, guid: 008b9b93a6039f34ea1fc8ab8520057f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 77974a808bd353d4dbf5e6f89e27eb49, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DissolveRamp:
@@ -120,6 +120,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OutlineMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -196,7 +200,7 @@ Material:
     - _Dissolve: 2
     - _DissolveAmount: 0.164
     - _DissolveBorderSize: 0.25
-    - _DissolveMapScale: 1
+    - _DissolveMapScale: 2.01
     - _DissolveMode: 0
     - _DissolveRampSize: 0.25
     - _DrawnClampMax: 1
@@ -238,6 +242,8 @@ Material:
     - _OptionsTab: 1
     - _Outline: 3
     - _OutlineData: 1
+    - _OutlineFadeMax: 2
+    - _OutlineFadeMin: 0.25
     - _OutlineMode: 1
     - _OutlineNoise: 0
     - _OutlineSize: 3.5
@@ -309,6 +315,7 @@ Material:
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 0.19999993, g: 0.19999993, b: 0.19999993, a: 1}
     - _VertexAnimationFrequency: {r: 2.5, g: 2.5, b: 2.5, a: 1}
+  m_BuildTextureStacks: []
 --- !u!114 &4590996404159485479
 MonoBehaviour:
   m_ObjectHideFlags: 11

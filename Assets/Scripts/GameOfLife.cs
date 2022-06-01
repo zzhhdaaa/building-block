@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOfLife : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class GameOfLife : MonoBehaviour
 
     void Update()
     {
-        if (LevelGenerator.instance.gridY < 60)
+        if (LevelGenerator.instance.gridY < 59)
         {
             //give it life!
             if (Input.GetKeyDown(KeyCode.Return))
@@ -31,6 +32,11 @@ public class GameOfLife : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             livingOn = !livingOn;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
