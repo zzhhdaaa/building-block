@@ -9,7 +9,6 @@ public class FirstPersonSwitch : MonoBehaviour
     public GameObject thirdPerson;
     public GameObject firstPerson;
     public GameObject cursorCanvas;
-    public LevelGenerator levelGenerator;
     private CornerElement[] cornerElements;
 
     private bool enableCollider = false;

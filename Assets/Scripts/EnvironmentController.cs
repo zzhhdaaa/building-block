@@ -15,7 +15,7 @@ public class EnvironmentController : MonoBehaviour
     {
         if (type01 == "Closed")
         {
-            if (Input.GetMouseButtonDown(2))
+            if (Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.Backspace))
             {
                 gameObject.transform.GetChild(0).gameObject.SetActive(true);
 
@@ -27,7 +27,7 @@ public class EnvironmentController : MonoBehaviour
         {
             EnvironmentMove();
 
-            if (Input.GetMouseButtonDown(2))
+            if (Input.GetMouseButtonDown(2) || Input.GetKeyDown(KeyCode.Backspace))
             {
                 gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 type01 = "Closed";
