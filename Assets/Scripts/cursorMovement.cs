@@ -23,6 +23,7 @@ public class CursorMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             cursorOn = !cursorOn;
+            cursor.SetActive(cursorOn);
         }
         if (cursorOn)
         {

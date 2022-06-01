@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="809b3951-1cd5-48ad-8ea0-f5f0ec37026f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.building-block/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.building-block/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/cornerElement.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/cornerElement.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Combined.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Combined.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameOfLife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameOfLife.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/Artistic/Materials/Threshold/CelThresholdAquarelle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/Artistic/Materials/Threshold/CelThresholdAquarelle.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/FlyingIsle/Materials/Drawn/Clouds.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/FlyingIsle/Materials/Drawn/Clouds.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/Spectate/Materials/Floor/ShaderBallMaterials/DissolveColor/InnerCircle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/Spectate/Materials/Floor/ShaderBallMaterials/DissolveColor/InnerCircle.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/Spectate/Materials/Floor/ShaderBallMaterials/DissolveRamp/InnerCircle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_MK/MKToon/Examples/Spectate/Materials/Floor/ShaderBallMaterials/DissolveRamp/InnerCircle.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/BurstAotSettings_StandaloneWindows.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CursorMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CursorMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +98,7 @@
       <workItem from="1653762032837" duration="5951000" />
       <workItem from="1654106233850" duration="1057000" />
       <workItem from="1654117679168" duration="654000" />
-      <workItem from="1654119364423" duration="197000" />
+      <workItem from="1654119364423" duration="674000" />
     </task>
     <servers />
   </component>
