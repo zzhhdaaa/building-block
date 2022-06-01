@@ -37,11 +37,11 @@ public class CameraMover : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            transform.RotateAround(new Vector3((LevelGenerator.instance.gridX-1)/2, 0f, (LevelGenerator.instance.gridZ-1)/2), Vector3.up, rotateSpeed * Time.deltaTime);
+            transform.RotateAround(new Vector3((LevelGenerator.instance.gridX-1)/2f, 0f, (LevelGenerator.instance.gridZ-1)/2f), Vector3.up, rotateSpeed * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.RotateAround(new Vector3((LevelGenerator.instance.gridX-1) / 2, 0f, (LevelGenerator.instance.gridZ-1) / 2), Vector3.up, -rotateSpeed * Time.deltaTime);
+            transform.RotateAround(new Vector3((LevelGenerator.instance.gridX-1)/2f, 0f, (LevelGenerator.instance.gridZ-1)/2f), Vector3.up, -rotateSpeed * Time.deltaTime);
         }
     }
     private void Zoom()

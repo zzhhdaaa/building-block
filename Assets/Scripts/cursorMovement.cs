@@ -8,6 +8,8 @@ public class CursorMovement : MonoBehaviour
     Ray ray;
     GridElement lastHit;
     RectTransform rectTransform;
+    private bool cursorOn = true;
+    public GameObject cursor;
 
     // Start is called before the first frame update
     void Start()
@@ -18,23 +20,30 @@ public class CursorMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit) && hit.collider.tag == "GridElement")
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            transform.position = hit.collider.transform.position;
-            lastHit = hit.collider.GetComponent<GridElement>();
-
-            this.rectTransform.sizeDelta = new Vector2(1.0f, lastHit.GetElementHeight());
-
-            if (Input.GetMouseButtonDown(1))
+            cursorOn = !cursorOn;
+        }
+        if (cursorOn)
+        {
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit) && hit.collider.tag == "GridElement")
             {
-                SetCursorButton(6);
-            }
+                transform.position = hit.collider.transform.position;
+                lastHit = hit.collider.GetComponent<GridElement>();
 
-            if (Input.GetMouseButtonDown(2))
-            {
-                FirstPersonSwitch.instance.firstPerson.transform.position = hit.point;
-                FirstPersonSwitch.instance.Switch();
+                this.rectTransform.sizeDelta = new Vector2(1.0f, lastHit.GetElementHeight());
+
+                if (Input.GetMouseButtonDown(1))
+                {
+                    SetCursorButton(6);
+                }
+
+                if (Input.GetMouseButtonDown(2))
+                {
+                    FirstPersonSwitch.instance.firstPerson.transform.position = hit.point;
+                    FirstPersonSwitch.instance.Switch();
+                }
             }
         }
     }
